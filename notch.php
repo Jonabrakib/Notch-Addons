@@ -70,13 +70,13 @@ final class Notch_Addons {
         // wp_register_style( 'myew-owl-carousel-theme', NOTCH_ADDONS_URL . 'assets/vendor/owl-carousel/css/owl.theme.default.min.css', [], rand(), 'all' );
         // wp_register_script( 'myew-owl-carousel', NOTCH_ADDONS_URL . 'assets/vendor/owl-carousel/js/owl.carousel.min.js', [ 'jquery' ], rand(), true );
 
-        // wp_register_style( 'myew-style', NOTCH_ADDONS_URL . 'assets/dist/css/public.min.css', [], rand(), 'all' );
+        wp_register_style( 'notch-style', NOTCH_ADDONS_URL . 'assets/css/notch-main.css', [], rand(), 'all' );
         // wp_register_script( 'myew-script', NOTCH_ADDONS_URL . 'assets/dist/js/public.min.js', [ 'jquery' ], rand(), true );
 
         // wp_enqueue_style( 'myew-owl-carousel' );
         // wp_enqueue_style( 'myew-owl-carousel-theme' );
         // wp_enqueue_script( 'myew-owl-carousel' );
-        // wp_enqueue_style( 'myew-style' );
+        wp_enqueue_style( 'notch-style' );
         // wp_enqueue_script( 'myew-script' );
     }
 
