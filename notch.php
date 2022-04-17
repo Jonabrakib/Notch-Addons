@@ -50,6 +50,7 @@ final class Notch_Addons {
         add_action( 'wp_enqueue_scripts', [ $this, 'scripts_styles' ] );
         add_action( 'init', [ $this, 'i18n' ] );
         add_action( 'plugins_loaded', [ $this, 'init' ] );
+        add_action( 'init', array( $this, 'create_settings' ) );
     }
 
     /**
@@ -59,6 +60,10 @@ final class Notch_Addons {
     public function define_constants() {
         define( 'NOTCH_ADDONS_URL', trailingslashit( plugins_url( '/', __FILE__ ) ) );
         define( 'NOTCH_ADDONS_PATH', trailingslashit( plugin_dir_path( __FILE__ ) ) );
+    }
+
+    public function create_settings(){
+        require_once NOTCH_ADDONS_PATH . '/settings/settings.php';
     }
 
     /**
@@ -79,6 +84,7 @@ final class Notch_Addons {
         wp_enqueue_style( 'notch-style' );
         // wp_enqueue_script( 'myew-script' );
     }
+    
 
     /**
     * Load Text Domain
@@ -118,10 +124,6 @@ final class Notch_Addons {
     * @since 1.0.0
     */
     public function init_widgets() {
-        // require_once NOTCH_ADDONS_PATH . '/widgets/preview-card.php';
-        // require_once NOTCH_ADDONS_PATH . '/widgets/pricing-table.php';
-        // require_once NOTCH_ADDONS_PATH . '/widgets/logo-carousel.php';
-        require_once NOTCH_ADDONS_PATH . '/widgets/notch-hotspot.php';
         require_once NOTCH_ADDONS_PATH . '/widgets/notch-timeline.php';
     }
 
