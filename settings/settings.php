@@ -141,6 +141,18 @@ class NotchAddonsSettings {
 			( isset( $this->notch_addons_options['notch_addons_timeline'] ) && $this->notch_addons_options['notch_addons_timeline'] === 'notch_addons_timeline' ) ? 'checked' : ''
 		);
 	}
+	
+	public function get_addons_options() {
+		$options = get_option( 'notch_addons_option_name' );
+		$defaults = array(
+			'notch_addons_blog_post' => '',
+			'notch_addons_image_gallery' => '',
+			'notch_addons_image_compare' => '',
+			'notch_addons_timeline' => '',
+		);
+		$options = wp_parse_args( $options, $defaults );
+		return $options;
+	}
 
 }
 if ( is_admin() )
